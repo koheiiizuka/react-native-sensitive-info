@@ -217,6 +217,7 @@ RCT_EXPORT_METHOD(getItem:(NSString *)key options:(NSDictionary *)options resolv
     }
     
     found = (__bridge NSDictionary*)(foundTypeRef);
+    CFRelease(foundTypeRef);
     if (!found) {
         resolve(nil);
     } else {
